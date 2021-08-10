@@ -10,4 +10,4 @@ const RouterCommponent = () => (
     </Router>
   </div>
 )
-export default Route;
+export default RouterCommponent;
