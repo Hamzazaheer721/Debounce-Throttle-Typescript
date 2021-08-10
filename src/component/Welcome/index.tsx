@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { debounce } from 'lodash'
+import InputFieldComponent from '../inputField';
 
 const WelcomeComponent : FC <{}> = () => {
   const [showField, setShowField] = useState<boolean>(false);
@@ -12,6 +13,7 @@ const WelcomeComponent : FC <{}> = () => {
         {' '}
         {showField ? 'Hide Field' : 'Show Field'}
       </button>
+      {showField && <InputFieldComponent />}
     </div>
   )
 }
