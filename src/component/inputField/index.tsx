@@ -1,5 +1,5 @@
 import {
-  FC, useCallback, useState, ChangeEvent,
+  FC, useCallback, useState, ChangeEvent, memo,
 } from 'react';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle'
@@ -7,7 +7,7 @@ import {
   Container, HighlightedText, InputField, MiniContainer, Text,
 } from './index.styled';
 
-const InputFieldComponent : FC <{}> = () => {
+const InputFieldComponent : FC <{}> = memo(() => {
   const [debouncedValue, setDebouncedValue] = useState<string>('')
   const [throttledValue, setThrottledValue] = useState<string>('');
 
@@ -37,6 +37,5 @@ const InputFieldComponent : FC <{}> = () => {
       </MiniContainer>
     </Container>
   )
-}
-
+})
 export default InputFieldComponent;

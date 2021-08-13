@@ -1,9 +1,9 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { debounce } from 'lodash'
 import InputFieldComponent from '../inputField';
 import { Container, Button } from './index.styled';
 
-const WelcomeComponent : FC <{}> = () => {
+const WelcomeComponent : FC <{}> = memo(() => {
   const [showField, setShowField] = useState<boolean>(false);
 
   const handleShowField = debounce(() => {
@@ -19,5 +19,6 @@ const WelcomeComponent : FC <{}> = () => {
       {showField && <InputFieldComponent />}
     </Container>
   )
-}
+});
+
 export default WelcomeComponent;
