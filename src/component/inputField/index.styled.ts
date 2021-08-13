@@ -13,7 +13,11 @@ export const MiniContainer = styled.div`
 export const HighlightedText = styled.h5`
     font-weight: bold;
 `
-
+export const InputField = styled.input`
+    width: 120px;
+    border-radius: 5px;
+    outline: none;
+`
 export const Text = styled.h5`
 
 `

@@ -1,8 +1,10 @@
-import { FC, useCallback, useState } from 'react';
+import {
+  FC, useCallback, useState, ChangeEvent,
+} from 'react';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle'
 import {
-  Container, HighlightedText, MiniContainer, Text,
+  Container, HighlightedText, InputField, MiniContainer, Text,
 } from './index.styled';
 
 const InputFieldComponent : FC <{}> = () => {
@@ -16,13 +18,15 @@ const InputFieldComponent : FC <{}> = () => {
   const applyThrottle = throttle((_value: string) => {
     setThrottledValue(_value)
   }, 1000)
-  const handleChange = useCallback((e : any) => {
+
+  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     applyDebounce(e.target.value);
     applyThrottle(e.target.value);
   }, [])
+
   return (
     <Container>
-      <input type="text" placeholder="type something here ..." onChange={handleChange} />
+      <InputField type="text" placeholder="type something here ..." onChange={handleChange} />
       <MiniContainer>
         <HighlightedText>Debounce : </HighlightedText>
         <Text>{debouncedValue}</Text>
