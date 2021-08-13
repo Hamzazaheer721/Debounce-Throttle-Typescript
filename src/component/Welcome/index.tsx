@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { debounce } from 'lodash'
 import InputFieldComponent from '../inputField';
+import { Container, Button } from './index.styled';
 
 const WelcomeComponent : FC <{}> = () => {
   const [showField, setShowField] = useState<boolean>(false);
@@ -8,13 +9,13 @@ const WelcomeComponent : FC <{}> = () => {
     setShowField(!showField)
   }, 1000) // adding delay of 1 second
   return (
-    <div>
-      <button type="button" onClick={handleShowField}>
+    <Container>
+      <Button type="button" onClick={handleShowField}>
         {' '}
         {showField ? 'Hide Field' : 'Show Field'}
-      </button>
+      </Button>
       {showField && <InputFieldComponent />}
-    </div>
+    </Container>
   )
 }
 export default WelcomeComponent;
