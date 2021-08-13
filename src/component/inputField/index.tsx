@@ -10,7 +10,6 @@ const InputFieldComponent : FC <{}> = () => {
 
   return (
     <>
-
       <input type="text" placeholder="type something here ..." onChange={handleChange} />
     </>
   )

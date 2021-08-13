@@ -8,4 +8,5 @@ export const Container = styled.div`
 export const Button = styled.button`
     width: 100px;
     wrap-word: break-word;
+    border-radius : 5px;
 `
