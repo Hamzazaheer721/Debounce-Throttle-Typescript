@@ -10,10 +10,12 @@ export const MiniContainer = styled.div`
     display: flex;
     align-items: center;
 `
+
 export const HighlightedText = styled.h5`
     font-weight: bold;
     margin: 0 20px 0 20px;
 `
+
 export const InputField = styled.input`
     width: 500px;
     border-radius: 5px;
